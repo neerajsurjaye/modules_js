@@ -1,1 +1,3 @@
 # modules_js
+
+init
