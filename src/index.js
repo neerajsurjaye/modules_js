@@ -1,5 +1,5 @@
 import { dropDown } from "./dropDown";
-
+import { imageSlider } from "./imageSlider";
 
 let box = dropDown("Index", "down");
 
@@ -8,33 +8,8 @@ box.add_element("Contacts");
 box.add_element("asdf");
 box.render();
 
-
-let up = dropDown("That", "down");
-up.add_element("home");
-up.add_element("asdf");
-up.add_element("olaola");
-up.add_element("home");
-up.add_element("asdf");
-up.add_element("olaola");
-up.add_element("home");
-up.add_element("asdf");
-up.add_element("olaola");
-
-up.add_element("home");
-up.add_element("asdf");
-up.add_element("olaola");
-up.add_element("home");
-up.add_element("asdf");
-up.add_element("olaola");
-up.add_element("home");
-up.add_element("asdf");
-up.add_element("olaola");
-up.add_element("home");
-up.add_element("asdf");
-up.add_element("olaola");
-
-up.render();
-
-
-
+let image = imageSlider("scroll");
+image.add_element("https://webdesignerwall.com/wp-content/uploads/2017/01/transforms.jpg");
+image.add_element("https://webdesignerwall.com/wp-content/uploads/2017/01/transforms.jpg");
+image.render();
 
