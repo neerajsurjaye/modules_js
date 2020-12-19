@@ -88,6 +88,9 @@
     position: relative;
     display: flex;
     flex-shrink: 0;
+    box-sizing: border-box;
+    border: 5px #222 solid;
+    border-radius: 8px;
     
     
 }
@@ -100,24 +103,26 @@
     justify-content: center;
     align-items: center;
     color: white;
+    font-weight: 1000;
     border-radius: 25px;
     cursor: pointer;
     user-select: none;
     box-shadow: 0px 0px 5px #111;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .arrow-left{
     position: absolute;
     left:0;
     top:50%;
-    transform: translate(-15px , -50%);
+    transform: translate(-25px , -50%);
 }
 
 .arrow-right{
     position: absolute;
     right:0;
     top:50%;
-    transform: translate(15px , -50%);
+    transform: translate(25px , -50%);
 }   
 
 .is-frame{
@@ -132,4 +137,43 @@
 .is-window > img{
     max-width: 100%;
 }
+
+.curtain{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    opacity: 0;
+}
+
+.curtain.play-anim{
+    animation: is-anim 0.2s ;
+}
+.curtain.end-anim{
+    animation: is-anim-end 0.2s ;
+}
+
+@keyframes is-anim{
+    0%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes is-anim-end{
+    0%{
+        opacity: 1;
+    }
+
+    100%{
+        opacity: 0;
+    }
+}
+
+/*image slider end*/
 

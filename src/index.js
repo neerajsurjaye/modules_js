@@ -9,7 +9,11 @@ box.add_element("asdf");
 box.render();
 
 let image = imageSlider("scroll");
-image.addElement("https://webdesignerwall.com/wp-content/uploads/2017/01/transforms.jpg");
-image.addElement("https://webdesignerwall.com/wp-content/uploads/2017/01/transforms.jpg");
+image.addElement("./img/a.jpg");
+image.addElement("./img/iandex.jpg");
+image.addElement("./img/inddex.jpg");
+image.addElement("./img/index.jpg");
 image.render();
+
+
 
