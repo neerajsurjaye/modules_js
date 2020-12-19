@@ -1,51 +1,54 @@
-let imageSlider = (target) => {
-    let images = [];
+const imageSlider = (target) => {
+    const imagesUrl = [];
+    const currentImage = 0;
 
-    let add_element = (source) => {
-        let frame = document.createElement("div");
-        frame.classList.add("is-frame");
-        let image = document.createElement("img");
-        image.src = source;
-        frame.appendChild(image);
-        images.push(frame);
-    }
+    const addElement = (source) => {
+        imagesUrl.push(source);
+    };
 
+    const render = () => {
+        const window = document.createElement('div');
+        let image = document.createElement('img');
+        const parent = document.getElementById(target);
 
-    let render = () => {
-        let window = document.createElement("div");
-        let stretch = document.createElement("div");
-        let parent = document.getElementById(target);
+        const left = document.createElement('div');
+        const right = document.createElement('div');
 
-        let left = document.createElement("div");
-        let right = document.createElement("div");
+        left.classList.add('arrow');
+        right.classList.add('arrow');
 
-        left.classList.add("arrow");
-        right.classList.add("arrow");
+        left.classList.add('arrow-left');
+        right.classList.add('arrow-right');
 
-        left.classList.add("arrow-left");
-        right.classList.add("arrow-right");
+        left.textContent = '<';
+        right.textContent = '>';
 
-        left.textContent = "<";
-        right.textContent = ">";
+        left.addEventListener("click", changeImage);
+        right.addEventListener("click", changeImage);
 
-        for (let i = 0; i < images.length; i++) {
-            window.appendChild(images[i]);
-        }
+        window.classList.add('is-window');
 
-        window.classList.add("is-window");
-        stretch.classList.add("is-str");
+        image.src = imagesUrl[0];
 
-
-
-        parent.appendChild(stretch);
-        stretch.appendChild(window);
-
+        parent.appendChild(window);
+        window.appendChild(image);
         window.appendChild(left);
         window.appendChild(right);
+    };
 
+    let changeImage = (e) => {
+        let classList = e.target.classList;
+        for (let i = 0; i < classList.length; i++) {
+            if (classList[i] == "arrow-left") {
+
+            }
+            else if (classList[i] == "arrow-right") {
+
+            }
+        }
     }
 
-    return { render, add_element };
-}
+    return { render, addElement };
+};
 
 export { imageSlider };
